@@ -1,0 +1,16 @@
+{
+  "name": "lec-3continue",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@upasana.25/firstpackage": "^1.0.2",
+    "@upasana.25/myfirstpackage": "^1.0.5"
+  },
+  "description": ""
+}

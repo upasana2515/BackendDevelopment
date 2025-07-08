@@ -1,0 +1,20 @@
+{
+  "name": "@upasana.25/myfirstpackage",
+  "version": "1.0.5",
+  "description": "this package do nothing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "upasana",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "hbs": "^4.2.0"
+  },
+  "directories": {
+    "lib": "lib"
+  }
+}
