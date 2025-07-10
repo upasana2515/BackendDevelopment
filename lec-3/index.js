@@ -1,3 +1,3 @@
 const express = require("express");
 // console.log(express);
-module.export = require("./lib/sum");
+module.exports = require("./lib/sum");
