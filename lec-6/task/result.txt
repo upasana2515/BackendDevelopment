@@ -1,0 +1,3 @@
+hello g27 
+gfghjcfjghj  
+function trim() { [native code] }
