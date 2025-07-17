@@ -15,10 +15,3 @@ fs.readFile("../demo.txt", "utf-8", function(err, data1) {
         });
     });
 });
-
-
-
-
-
-//Assignment - 10 MARKS
-//WRITE DATA IN FILE DEMO.TXT ,INPUT WILL BE PASSED USING TERMINAL
