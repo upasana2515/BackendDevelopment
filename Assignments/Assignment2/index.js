@@ -29,7 +29,7 @@ fs.readFile("./users.txt", "utf-8", function (err, data1) {
             product: productname
         };
 
-        // ⬇ NEW: Read existing order history first
+        
         fs.readFile("./orderHistory.txt", "utf-8", function (err, data3) {
             let orders = [];
 
