@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TO-DO App</title>
+  <meta charset="UTF-8" />
+  <title>TODO App</title>
 </head>
 <body>
-    <h1>TO-DO App</h1>
-    <ul class="workcontainer">
-        <li class="workitem">
-            <div class="workinfo">
-                <h1>title</h1>
-                <p>description</p>
-            </div>
-            <div class="user-btn">
-                <button id="delete-title">REMOVE</button>
-                <button id="edit">EDIT</button>
-            </div>
-        </li>
-    </ul>
-    <script src="index.js"></script>
-    
+  <h1>TODO App</h1>
+
+  <form id="todoForm">
+    <input type="text" id="title" placeholder="Title" required />
+    <input type="text" id="description" placeholder="Description" required />
+    <button type="submit">Add TODO</button>
+  </form>
+
+  <ul class="workcontainer"></ul>
+
+  <script src="index.js"></script>
 </body>
 </html>

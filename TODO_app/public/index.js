@@ -1,31 +1,41 @@
-let workcontainer = document.querySelector(".workcontainer");
-function getUsers(URL) {
-    fetch(URL)
-        .then((res) => res.json())
-        .then((data) => {
-            data.forEach((title) => {
-                showUser(title);
-            });
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+const username = sessionStorage.getItem("username");
+if (!username) {
+  window.location.href = "login.html"; // redirect if not logged in
 }
 
-gettUsers("https://localhost:3987/title");
+const workContainer = document.querySelector(".workcontainer");
+const todoForm = document.getElementById("todoForm");
 
-function showwork(work){
-    let li = document.createElement("li");
-    li.innerHTML = `
-            <div class="workinfo">
-                <h1>title</h1>
-                <p>description</p>
-            </div>
-            <div class="user-btn">
-                <button id="delete-title">REMOVE</button>
-                <button id="edit">EDIT</button>
-            </div>
-    `;
-    userContainer.appendChild(li);
+function loadTodos() {
+  fetch(`/todos?user=${username}`)
+    .then(res => res.json())
+    .then(data => {
+      workContainer.innerHTML = "";
+      data.forEach(showTodo);
+    });
 }
 
+function showTodo(todo) {
+  const li = document.createElement("li");
+  li.innerHTML = `<strong>${todo.title}</strong>: ${todo.description}`;
+  workContainer.appendChild(li);
+}
+
+todoForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const title = document.getElementById("title").value.trim();
+  const description = document.getElementById("description").value.trim();
+
+  fetch("/todos", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username, title, description })
+  })
+    .then(res => res.json())
+    .then((data) => {
+      showTodo(data);
+      todoForm.reset();
+    });
+});
+
+loadTodos();
