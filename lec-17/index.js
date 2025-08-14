@@ -68,6 +68,13 @@ app.post("/blogs", async(req,res)=>{
     let title = req.body.title;
     let body = req.body.body;
     let userId = req.body.userId; 
+    let user = await User.findById(userId);
+    if (!user) {        
+        return res.json({
+            success: false,
+            message: "Invalid User"
+        });
+    }
     let blog = {
         title : title,
         body : body,
@@ -76,7 +83,7 @@ app.post("/blogs", async(req,res)=>{
     }
     let newBlog = new Blog(blog) 
     await newBlog.save()
-    let user = await User.findById(userId);
+    // let user = await User.findById(userId);
     user.blogs.push(newBlog._id);
     await user.save();
     res.json({
@@ -85,7 +92,24 @@ app.post("/blogs", async(req,res)=>{
         data : newBlog
     })
 })
-
+app.delete("/blogs/:blogId", async (req, res) => {
+    let blogId = req.params.blogId; 
+    let userId = req.body.userId;
+    let blogExist = await Blog.findById(blogId);
+    if (!blogExist) {
+        return res.json({
+            success: false,
+            message: "Blog not found"
+        });
+    }
+    if (blogExist.userId !== userId) {
+        return res.json({
+            success: false,
+            message: "You are not authorized to delete this blog"
+        });
+    }
+    await Blog.findByIdAndDelete(blogId);
+})    
 // read
 // read all data
 app.get("/blogs",async (req,res)=>{
