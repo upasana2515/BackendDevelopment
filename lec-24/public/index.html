@@ -1,0 +1,116 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog page</title>
+</head>
+<body>
+    <header>
+    <div class = logo>
+        <h1 class = "logo">My Blog</h1>
+    </div>
+    <div class = "nav-links">
+        <nav class="nav">
+            <ul class="nav-links-list">
+                <li class="nav-link-item"><a href="/">Home</a></li>
+                <li class="nav-link-item"><a href="/allblog">About</a></li>
+                <li class="nav-link-item"><a href="/myblogs">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+    <main>
+        <h1 class = "login-form" action="/auth/login">Login</h1>
+        <form action ="/login" method="POST">
+        <input type="text" id="username" name="username" placeholder="Username">
+        <br>
+        <input type="password" id="password" name="password" placeholder="Password">
+        <br>
+        <button type="submit">Login</button>
+    </form>
+    <hr>
+    <h1 class = "register-form" action="/users">Register</h1>
+    <form id="signup-form" action="/register" method="POST">
+
+        <input type="text" id="signup-username" name="username" placeholder="Username">
+        <br>
+        <input type="password" id="signup-password" name="password" placeholder="Password">
+        <input type="email" id="signup-email" name="email" placeholder="Email">
+        <br>
+        <button type="submit">Register</button>
+    </form>
+    <hr>
+    <h1 class = "create-post-form">Create Post</h1>
+    <form action="/create_post" method="POST">
+        <input type="text" id="title" name="title" placeholder="Title">
+        <br>
+        <textarea name="body" id="content" placeholder="Content"></textarea>
+
+        <br>
+        <button type="submit">Create Post</button>
+    </main>
+    <footer></footer>
+    <script src="public/script.js"></script>
+
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog page</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1 class="logo">My Blog</h1>
+        </div>
+        <div class="nav-links">
+            <nav class="nav">
+                <ul class="nav-links-list">
+                    <li class="nav-link-item"><a href="/">Home</a></li>
+                    <li class="nav-link-item"><a href="/allblog">About</a></li>
+                    <li class="nav-link-item"><a href="/myblogs">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h1 class="login-form">Login</h1>
+        <form action="/auth/login" method="POST">
+            <input type="text" id="username" name="username" placeholder="Username">
+            <br>
+            <input type="password" id="password" name="password" placeholder="Password">
+            <br>
+            <button type="submit">Login</button>
+        </form>
+        <hr>
+        <h1 class="register-form">Register</h1>
+        <form id="signup-form" action="/users" method="POST">
+            <input type="text" id="signup-username" name="username" placeholder="Username">
+            <br>
+            <input type="password" id="signup-password" name="password" placeholder="Password">
+            <br>
+            <input type="email" id="signup-email" name="email" placeholder="Email">
+            <br>
+            <button type="submit">Register</button>
+        </form>
+        <hr>
+        <h1 class="create-post-form">Create Post</h1>
+        <form action="/blogs" method="POST">
+            <input type="text" id="title" name="title" placeholder="Title">
+            <br>
+            <textarea name="body" id="content" placeholder="Content"></textarea>
+            <br>
+            <button type="submit">Create Post</button>
+        </form>
+    </main>
+    <footer></footer>
+    <script src="/script.js"></script>
+</body>
+</html>

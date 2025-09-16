@@ -82,11 +82,10 @@ const isLogin = (req, res, next) => {
         if (err) {
             return res.json({ success: false, message: "Invalid or expired token" });
         }
-        req.userId = decoded.userId; // ✅ attach userId to req
+        req.userId = decoded.userId; 
         next();
     });
 };
-
 // user signup
 app.post("/users", async (req,res)=>{
     let { name, email, password } = req.body;
@@ -120,7 +119,7 @@ app.post("/login", async (req,res)=>{
 app.post("/blogs", isLogin, async(req,res)=>{
     let { title, body } = req.body;
     let userId = req.userId;  // from token
-
+``
     let user = await User.findById(userId);
     if (!user) {
         return res.json({
@@ -167,7 +166,6 @@ app.get("/blogs",async (req,res)=>{
         data : allBlogs
     });
 });
-
 // read single blog
 app.get("/blogs/:id",async (req,res)=>{
     let id = req.params.id;
@@ -178,7 +176,6 @@ app.get("/blogs/:id",async (req,res)=>{
         data : blog
     });
 });
-
 // read all users
 app.get("/users", async (req,res)=>{
     let allUsers = await User.find();
@@ -188,7 +185,6 @@ app.get("/users", async (req,res)=>{
         data : allUsers
     });
 });
-
 // read single user
 app.get("/users/:id", async(req,res)=>{
     let id = req.params.id;
