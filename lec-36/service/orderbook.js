@@ -245,6 +245,7 @@ class OrderBook {
                 }
                 this._sort(order.side);
             }
+            return {book: this.getBookSnapshot(),order: order};
         } else {
             let [order, trade] = this._MarketMatch(newOrder, trades);
             if(trade) {
@@ -256,6 +257,7 @@ class OrderBook {
                 console.log("order completed : "+order.executedQty);
             }
         }
+        return {book: this.getBookSnapshot(),order: order};
     }
 
     _LimitMatch(order,trade) {

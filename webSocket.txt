@@ -1,0 +1,11 @@
+=========================WEBSOCKET=======================================
+WEBSOCKET --> communication protocol just like HTTP
+A Websocket  is a communication protocol and technology that provides a persistent,full-duplecx(2-ways)
+communication channel between a client(like a web browser) and a server over a single TCP connection
+
+eg-- chat application,live score
+in server driven thing websocket is used
+to implement socket: ws and socket
+ws-native support browser from but not to socket i 
+
+for storage we use hashmap and set in set we store socket
